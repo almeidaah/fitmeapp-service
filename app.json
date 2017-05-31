@@ -1,0 +1,6 @@
+{
+  "name": "FitMeApp-Service",
+  "description": "FitMeApp-Service Spring-boot : fitme-service",
+  "image": "heroku/java",
+  "addons": [ "heroku-postgresql" ]
+}

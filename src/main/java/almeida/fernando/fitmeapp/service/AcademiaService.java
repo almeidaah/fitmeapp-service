@@ -1,0 +1,23 @@
+package almeida.fernando.fitmeapp.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import almeida.fernando.fitmeapp.model.Academia;
+import almeida.fernando.fitmeapp.repository.AcademiaRepository;
+
+@Service
+public class AcademiaService {
+
+	@Autowired
+	private AcademiaRepository academiaRepository;
+	
+	@Transactional
+	public List<Academia> findAll() {
+		return academiaRepository.findAll();
+	}
+
+}
