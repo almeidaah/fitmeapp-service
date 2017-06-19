@@ -22,6 +22,7 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
+	
 	/**
 	 * Inserir novo Usuario
 	 * @param parameters

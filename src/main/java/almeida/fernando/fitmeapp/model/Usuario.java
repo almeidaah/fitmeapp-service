@@ -11,7 +11,7 @@ public class Usuario {
 	@Id
 	private String id;
 
-	private Integer codigoAcademia;
+	private Integer codAcademia;
 	
 	private String login;
 	private String senha;
@@ -26,12 +26,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public Integer getCodigoAcademia() {
-		return codigoAcademia;
+	public Integer getCodcademia() {
+		return codAcademia;
 	}
 
-	public void setCodigoAcademia(Integer codigoAcademia) {
-		this.codigoAcademia = codigoAcademia;
+	public void setCodAcademia(Integer codAcademia) {
+		this.codAcademia = codAcademia;
 	}
 
 	public String getLogin() {

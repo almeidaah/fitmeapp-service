@@ -16,7 +16,7 @@ public class UsuarioUtils {
 		Usuario usuario = new Usuario();
 		
 		usuario.setId(parameters.get(UsuarioUtils.ID));
-		usuario.setCodigoAcademia(Integer.parseInt(parameters.get(UsuarioUtils.COD_ACADEMIA)));
+		usuario.setCodAcademia(Integer.parseInt(parameters.get(UsuarioUtils.COD_ACADEMIA)));
 		usuario.setLogin(parameters.get(UsuarioUtils.LOGIN));
 		usuario.setSenha(parameters.get(UsuarioUtils.SENHA));
 		usuario.setClienteDesde(new Date());
