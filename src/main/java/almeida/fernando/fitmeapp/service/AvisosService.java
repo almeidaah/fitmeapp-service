@@ -1,5 +1,6 @@
 package almeida.fernando.fitmeapp.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import almeida.fernando.fitmeapp.model.Aviso;
 import almeida.fernando.fitmeapp.repository.AvisosRepository;
 
 @Service
+@Transactional
 public class AvisosService {
 
 	@Autowired
@@ -17,17 +19,22 @@ public class AvisosService {
 
 	@Transactional
 	public List<Aviso> findAll() {
-		return avisosRepo.findAll();
+		return avisosRepo.findAllByOrderByDataAvisoDesc();
 	}
 
-	@Transactional
 	public void saveOrUpdate(Aviso aviso) {
-		//Update else Insert
-		if(aviso.getId() != null){
+		// Update else Insert
+		if (aviso.getId() != null) {
 			avisosRepo.save(aviso);
-		}else{
+		} else {
+			aviso.setDataAviso(new Date());
 			avisosRepo.insert(aviso);
 		}
+	}
+
+	public void delete(String id) {
+		avisosRepo.delete(id);
+
 	}
 
 }

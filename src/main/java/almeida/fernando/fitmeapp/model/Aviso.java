@@ -1,5 +1,7 @@
 package almeida.fernando.fitmeapp.model;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,11 +13,8 @@ public class Aviso {
 
 	private String titulo;
 	private String descricao;
-
-	public Aviso(String titulo, String descricao) {
-		this.titulo = titulo;
-		this.descricao = descricao;
-	}
+	
+	private Date dataAviso;
 
 	public String getId() {
 		return id;
@@ -39,6 +38,14 @@ public class Aviso {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public Date getDataAviso() {
+		return dataAviso;
+	}
+
+	public void setDataAviso(Date dataAviso) {
+		this.dataAviso = dataAviso;
 	}
 
 }
