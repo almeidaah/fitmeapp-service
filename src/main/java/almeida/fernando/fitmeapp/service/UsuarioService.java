@@ -8,14 +8,15 @@ import almeida.fernando.fitmeapp.model.Usuario;
 import almeida.fernando.fitmeapp.repository.UsuarioRepository;
 
 @Service
+@Transactional
 public class UsuarioService {
 
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	@Transactional
 	public void save(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
+
 
 }

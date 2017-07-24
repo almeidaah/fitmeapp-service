@@ -33,8 +33,6 @@ public class UsuarioController {
 		Usuario usuario = UsuarioUtils.popularUsuario(parameters);
 		usuarioService.save(usuario);
 		return new ResponseEntity<Usuario>(usuario, HttpStatus.OK);
-
 	}
-
-
+	
 }

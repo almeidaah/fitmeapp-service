@@ -6,4 +6,5 @@ import almeida.fernando.fitmeapp.model.Usuario;
 
 public interface UsuarioRepository extends MongoRepository<Usuario, String> {
 
+
 }

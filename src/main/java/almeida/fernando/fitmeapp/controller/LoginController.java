@@ -1,8 +1,12 @@
 package almeida.fernando.fitmeapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -10,7 +14,9 @@ import almeida.fernando.fitmeapp.model.Usuario;
 import almeida.fernando.fitmeapp.service.LoginService;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("fitme/v1/login")
+@CrossOrigin(origins="*")
+
 public class LoginController {
 
 	@Autowired
@@ -24,16 +30,14 @@ public class LoginController {
 	 */
 	@PostMapping
 	@ResponseBody
-	public Usuario login(Integer codAcademia, String login, String senha){
+	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario){
+		Usuario dbUser = null;
+		dbUser = loginService.login(usuario.getCodAcademia(), usuario.getLogin(), usuario.getSenha());
 		
-		Usuario usuario = null;
-		usuario = loginService.login(login, senha);
-		
-		//Caso o usuário seja de outra academia
-		if(usuario != null && usuario.getCodcademia() != codAcademia){
-			return null;
+		if(dbUser != null){
+			return new ResponseEntity<>(dbUser, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
-
-		return usuario;
 	}
 }

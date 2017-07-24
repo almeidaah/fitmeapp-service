@@ -12,9 +12,10 @@ public class LoginService {
 	@Autowired
 	private LoginRepository loginRepository;
 
-	public Usuario login(String login, String senha) {
-		return loginRepository.login(login, senha);
+	public Usuario login(Integer codAcademia, String login, String senha) {
+		return loginRepository.findByCodAcademiaAndLoginAndSenha(codAcademia, login, senha);
 	}
+	
 	
 	
 }

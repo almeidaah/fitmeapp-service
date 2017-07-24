@@ -26,7 +26,7 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public Integer getCodcademia() {
+	public Integer getCodAcademia() {
 		return codAcademia;
 	}
 

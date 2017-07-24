@@ -10,14 +10,29 @@ import almeida.fernando.fitmeapp.model.Academia;
 import almeida.fernando.fitmeapp.repository.AcademiaRepository;
 
 @Service
+@Transactional
 public class AcademiaService {
 
 	@Autowired
 	private AcademiaRepository academiaRepository;
-	
-	@Transactional
+
 	public List<Academia> findAll() {
 		return academiaRepository.findAll();
 	}
 
+	public void delete(String id) {
+		academiaRepository.delete(id);
+	}
+
+	public Academia findOne(String id) {
+		return academiaRepository.findOne(id);
+	}
+
+	public Academia insert(Academia academia) {
+
+		if (org.springframework.util.StringUtils.isEmpty(academia.getId())) {
+			return academiaRepository.insert(academia);
+		}
+		return academiaRepository.save(academia);
+	}
 }
