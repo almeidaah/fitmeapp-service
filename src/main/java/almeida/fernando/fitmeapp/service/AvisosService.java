@@ -17,7 +17,6 @@ public class AvisosService {
 	@Autowired
 	private AvisosRepository avisosRepo;
 
-	@Transactional
 	public List<Aviso> findAll() {
 		return avisosRepo.findAllByOrderByDataAvisoDesc();
 	}
