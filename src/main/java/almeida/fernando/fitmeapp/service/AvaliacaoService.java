@@ -26,7 +26,7 @@ public class AvaliacaoService {
 	}
 
 	public List<Avaliacao> findByUserId(String userId) {
-		return avaliacaoRepository.findByUserId(userId);
+		return avaliacaoRepository.findByUserIdOrderByDataAvaliacaoDesc(userId);
 	}
 	
 	public Avaliacao insert(Avaliacao avaliacao) {
@@ -39,7 +39,7 @@ public class AvaliacaoService {
 	}
 
 	public void deleteAvaliacoesUser(String userId) {
-		List<Avaliacao> avaliacoes = avaliacaoRepository.findByUserId(userId);
+		List<Avaliacao> avaliacoes = avaliacaoRepository.findByUserIdOrderByDataAvaliacaoDesc(userId);
 		avaliacoes.forEach(avaliacao -> avaliacaoRepository.delete(avaliacao));
 	}
 }

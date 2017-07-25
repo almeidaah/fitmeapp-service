@@ -10,7 +10,7 @@ import almeida.fernando.fitmeapp.model.Treino;
 @Repository
 public interface TreinoRepository extends MongoRepository<Treino, String>{
 
-	List<Treino> findByUserId(String userId);
+	List<Treino> findByUserIdOrderByDataTreinoDesc(String userId);
 
 	List<Treino> findAllByOrderByDataTreinoDesc();
 

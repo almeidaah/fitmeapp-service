@@ -21,11 +21,11 @@ public class TreinoService {
 	}
 
 	public List<Treino> findByUserId(String userId) {
-		return treinoRepository.findByUserId(userId);
+		return treinoRepository.findByUserIdOrderByDataTreinoDesc(userId);
 	}
 
 	public void deleteUserTrainings(String userId) {
-		List<Treino> userTrainings = treinoRepository.findByUserId(userId);
+		List<Treino> userTrainings = treinoRepository.findByUserIdOrderByDataTreinoDesc(userId);
 		userTrainings.forEach(training -> treinoRepository.delete(training));
 	}
 	

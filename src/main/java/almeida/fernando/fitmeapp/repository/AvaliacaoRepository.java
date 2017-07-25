@@ -10,7 +10,7 @@ import almeida.fernando.fitmeapp.model.Avaliacao;
 @Repository
 public interface AvaliacaoRepository extends MongoRepository<Avaliacao, String>{
 
-	List<Avaliacao> findByUserId(String userId);
+	List<Avaliacao> findByUserIdOrderByDataAvaliacaoDesc(String userId);
 
 	List<Avaliacao> findAllByOrderByDataAvaliacaoDesc();
 
