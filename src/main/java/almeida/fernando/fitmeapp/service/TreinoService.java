@@ -10,19 +10,23 @@ import almeida.fernando.fitmeapp.model.Treino;
 import almeida.fernando.fitmeapp.repository.TreinoRepository;
 
 @Service
+@Transactional
 public class TreinoService {
 
 	@Autowired
 	private TreinoRepository treinoRepository;
 	
-	@Transactional
 	public List<Treino> findAll() {
-		return treinoRepository.findAll();
+		return treinoRepository.findAllByOrderByDataTreinoDesc();
 	}
 
-	@Transactional
-	public List<Treino> findByUserId(Integer userId) {
+	public List<Treino> findByUserId(String userId) {
 		return treinoRepository.findByUserId(userId);
+	}
+
+	public void deleteUserTrainings(String userId) {
+		List<Treino> userTrainings = treinoRepository.findByUserId(userId);
+		userTrainings.forEach(training -> treinoRepository.delete(training));
 	}
 	
 }

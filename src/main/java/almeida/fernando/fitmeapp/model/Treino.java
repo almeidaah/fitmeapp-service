@@ -17,7 +17,7 @@ public class Treino {
 	private List<Exercicio> exercicios;
 
 	/**Usuario que possui o treino */
-	private Integer userId;
+	private String userId;
 	
 	private Date dataTreino;
 
@@ -45,11 +45,11 @@ public class Treino {
 		this.exercicios = exercicios;
 	}
 
-	public Integer getUserId() {
+	public String getUserId() {
 		return userId;
 	}
 
-	public void setUserId(Integer userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	
