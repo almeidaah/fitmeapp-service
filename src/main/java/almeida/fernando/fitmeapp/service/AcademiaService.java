@@ -27,6 +27,10 @@ public class AcademiaService {
 	public Academia findOne(String id) {
 		return academiaRepository.findOne(id);
 	}
+	
+	public Academia findByCodigo(Integer codigo) {
+		return academiaRepository.findByCodigo(codigo);
+	}
 
 	public Academia insert(Academia academia) {
 
@@ -35,4 +39,6 @@ public class AcademiaService {
 		}
 		return academiaRepository.save(academia);
 	}
+
+
 }

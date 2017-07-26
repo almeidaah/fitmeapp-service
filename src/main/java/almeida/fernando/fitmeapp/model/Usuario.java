@@ -7,15 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Usuario {
-	
+
 	@Id
 	private String id;
 
-	private Integer codAcademia;
-	
+	private String idAcademia;
+
 	private String login;
 	private String senha;
-	
+
 	private Date clienteDesde;
 
 	public String getId() {
@@ -26,12 +26,12 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public Integer getCodAcademia() {
-		return codAcademia;
+	public String getIdAcademia() {
+		return idAcademia;
 	}
 
-	public void setCodAcademia(Integer codAcademia) {
-		this.codAcademia = codAcademia;
+	public void setIdAcademia(String idAcademia) {
+		this.idAcademia = idAcademia;
 	}
 
 	public String getLogin() {
@@ -57,7 +57,5 @@ public class Usuario {
 	public void setClienteDesde(Date clienteDesde) {
 		this.clienteDesde = clienteDesde;
 	}
-	
-	
-	
+
 }

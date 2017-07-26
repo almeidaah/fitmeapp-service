@@ -20,6 +20,10 @@ public class AvisosService {
 	public List<Aviso> findAll() {
 		return avisosRepo.findAllByOrderByDataAvisoDesc();
 	}
+	
+	public List<Aviso> findAllByIdAcademia(String idAcademia) {
+		return avisosRepo.findAllByIdAcademiaOrderByDataAvisoDesc(idAcademia);
+	}
 
 	public void saveOrUpdate(Aviso aviso) {
 		// Update else Insert

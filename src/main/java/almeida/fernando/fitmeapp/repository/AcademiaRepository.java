@@ -8,4 +8,6 @@ import almeida.fernando.fitmeapp.model.Academia;
 @Repository
 public interface AcademiaRepository extends MongoRepository<Academia, String>{
 
+	Academia findByCodigo(Integer codigo);
+
 }

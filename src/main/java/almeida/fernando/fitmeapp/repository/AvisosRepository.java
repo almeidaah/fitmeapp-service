@@ -12,4 +12,6 @@ public interface AvisosRepository extends MongoRepository<Aviso, String>{
 	
 	public List<Aviso> findAllByOrderByDataAvisoDesc();
 
+	public List<Aviso> findAllByIdAcademiaOrderByDataAvisoDesc(String idAcademia);
+
 }

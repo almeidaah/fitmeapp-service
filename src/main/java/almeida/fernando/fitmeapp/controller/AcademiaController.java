@@ -45,6 +45,22 @@ public class AcademiaController {
 	public Academia findOne(@PathVariable String id){
 		return academiaService.findOne(id);
 	}
+	
+	/**
+	 * Busca academia por ID
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/findbyCodigo/{codAcademia}")
+	@ResponseBody
+	public ResponseEntity<Academia> findByCodigo(@PathVariable Integer codAcademia){
+		Academia academia = academiaService.findByCodigo(codAcademia);
+		if(academia != null){
+			return new ResponseEntity<Academia>(academia, HttpStatus.OK);
+		}
+		return new ResponseEntity<Academia>(academia, HttpStatus.FORBIDDEN);
+		
+	}
 
 	/**
 	 * Deleta uma academia da lista

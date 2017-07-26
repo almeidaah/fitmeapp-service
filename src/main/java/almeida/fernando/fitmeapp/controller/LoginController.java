@@ -22,9 +22,9 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
-	/**,
+	/**
 	 * @param codAcademia
-	 * @param login
+	 * @param login4
 	 * @param senha
 	 * @return Usuario logado
 	 */
@@ -32,7 +32,7 @@ public class LoginController {
 	@ResponseBody
 	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario){
 		Usuario dbUser = null;
-		dbUser = loginService.login(usuario.getCodAcademia(), usuario.getLogin(), usuario.getSenha());
+		dbUser = loginService.login(usuario.getIdAcademia(), usuario.getLogin(), usuario.getSenha());
 		
 		if(dbUser != null){
 			return new ResponseEntity<>(dbUser, HttpStatus.OK);

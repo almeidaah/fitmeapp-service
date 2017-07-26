@@ -44,6 +44,15 @@ public class AvisosController {
 		return avisosService.findAll();
 	}
 	
+	/**
+	 * Encontra todos os avisos publicados.
+	 */
+	@GetMapping("/findByCodAcademia/{idAcademia}")
+	@ResponseBody
+	public List<Aviso> findByIdAcademia(String idAcademia){
+		return avisosService.findAll();
+	}
+	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Aviso> delete(@PathVariable String id){
 		avisosService.delete(id);

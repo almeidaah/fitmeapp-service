@@ -15,6 +15,18 @@ public class Aviso {
 	private String descricao;
 	
 	private Date dataAviso;
+	
+	//Todo aviso está atrelado a uma academia(FK)
+	private String idAcademia;
+
+
+	public String getIdAcademia() {
+		return idAcademia;
+	}
+
+	public void setIdAcademia(String idAcademia) {
+		this.idAcademia = idAcademia;
+	}
 
 	public String getId() {
 		return id;

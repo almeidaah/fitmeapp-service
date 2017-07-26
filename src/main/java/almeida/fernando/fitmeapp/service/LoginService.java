@@ -14,8 +14,8 @@ public class LoginService {
 	@Autowired
 	private LoginRepository loginRepository;
 
-	public Usuario login(Integer codAcademia, String login, String senha) {
-		return loginRepository.findByCodAcademiaAndLoginAndSenha(codAcademia, login, senha);
+	public Usuario login(String idAcademia, String login, String senha) {
+		return loginRepository.findByIdAcademiaAndLoginAndSenha(idAcademia, login, senha);
 	}
 	
 	

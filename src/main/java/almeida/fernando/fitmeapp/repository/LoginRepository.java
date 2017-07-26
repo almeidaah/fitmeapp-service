@@ -9,6 +9,6 @@ import almeida.fernando.fitmeapp.model.Usuario;
 public interface LoginRepository extends MongoRepository<Usuario, Integer> {
 
 	//@Query(value= "{ 'codAcademia' : { $regex: '?0' }, 'login' : { $regex: '?1' }, 'senha' : { $regex: '?2' }  }")
-	Usuario findByCodAcademiaAndLoginAndSenha(Integer codAcademia, String login, String senha);
+	Usuario findByIdAcademiaAndLoginAndSenha(String idAcademia, String login, String senha);
 	
 }
