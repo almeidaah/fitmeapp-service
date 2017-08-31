@@ -3,18 +3,18 @@ package almeida.fernando.fitmeapp.model;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document
 public class Usuario {
 
 	@Id
 	private String id;
 
-	private String idAcademia;
-
 	private String login;
 	private String senha;
+
+	private String email;
+
+	private String nomeCompleto;
 
 	private Date clienteDesde;
 
@@ -24,14 +24,6 @@ public class Usuario {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public String getIdAcademia() {
-		return idAcademia;
-	}
-
-	public void setIdAcademia(String idAcademia) {
-		this.idAcademia = idAcademia;
 	}
 
 	public String getLogin() {
@@ -56,6 +48,22 @@ public class Usuario {
 
 	public void setClienteDesde(Date clienteDesde) {
 		this.clienteDesde = clienteDesde;
+	}
+
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

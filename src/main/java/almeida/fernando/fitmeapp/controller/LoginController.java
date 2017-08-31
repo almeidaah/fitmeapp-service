@@ -23,16 +23,15 @@ public class LoginController {
 	private LoginService loginService;
 	
 	/**
-	 * @param codAcademia
-	 * @param login4
+	 * @param login
 	 * @param senha
-	 * @return Usuario logado
+	 * @return Cliente logado
 	 */
-	@PostMapping
+	@PostMapping("/cliente")
 	@ResponseBody
-	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario){
+	public ResponseEntity<Usuario> loginCliente(@RequestBody Usuario usuario){
 		Usuario dbUser = null;
-		dbUser = loginService.login(usuario.getIdAcademia(), usuario.getLogin(), usuario.getSenha());
+		dbUser = loginService.loginCliente(usuario.getLogin(), usuario.getSenha());
 		
 		if(dbUser != null){
 			return new ResponseEntity<>(dbUser, HttpStatus.OK);
@@ -40,4 +39,24 @@ public class LoginController {
 			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 		}
 	}
+	
+	/**
+	 * @param login
+	 * @param senha
+	 * @return Instrutor logado
+	 */
+	@PostMapping("/instrutor")
+	@ResponseBody
+	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario){
+		Usuario dbUser = null;
+		dbUser = loginService.loginInstrutor(usuario.getLogin(), usuario.getSenha());
+		
+		if(dbUser != null){
+			return new ResponseEntity<>(dbUser, HttpStatus.OK);
+		}else{
+			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+		}
+	}
+	
+	
 }

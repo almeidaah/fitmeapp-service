@@ -5,18 +5,27 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import almeida.fernando.fitmeapp.model.Usuario;
-import almeida.fernando.fitmeapp.repository.LoginRepository;
+import almeida.fernando.fitmeapp.repository.LoginClienteRepository;
+import almeida.fernando.fitmeapp.repository.LoginInstrutorRepository;
 
 @Service
 @Transactional
 public class LoginService {
 
 	@Autowired
-	private LoginRepository loginRepository;
-
-	public Usuario login(String idAcademia, String login, String senha) {
-		return loginRepository.findByIdAcademiaAndLoginAndSenha(idAcademia, login, senha);
+	private LoginClienteRepository loginClienteRepository;
+	
+	@Autowired
+	private LoginInstrutorRepository loginInstrutorRepository;
+	
+	public Usuario loginCliente(String login, String senha) {
+		return loginClienteRepository.findByLoginAndSenha(login, senha);
 	}
+	
+	public Usuario loginInstrutor(String login, String senha) {
+		return loginInstrutorRepository.findByLoginAndSenha(login, senha);
+	}
+	
 	
 	
 	
