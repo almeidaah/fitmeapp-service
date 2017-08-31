@@ -8,13 +8,15 @@ public class Instrutor extends Usuario {
 	/**
 	 * Número máximo de alunos que o instrutor poderá cadastrar
 	 * */
-	private final Integer numMaxAlunos = 100;
+	public static final Integer NUM_MAX_ALUNOS_DEFAULT = 100;
+	
+	private Integer numMaxAlunos;
 
 	public Integer getNumMaxAlunos() {
 		return numMaxAlunos;
 	}
 
-//	public void setNumMaxAlunos(Integer numMaxAlunos) {
-//		this.numMaxAlunos = numMaxAlunos;
-//	}
+	public void setNumMaxAlunos(Integer numMaxAlunos) {
+		this.numMaxAlunos = numMaxAlunos;
+	}
 }

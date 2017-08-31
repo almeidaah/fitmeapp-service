@@ -7,7 +7,7 @@ import almeida.fernando.fitmeapp.model.Cliente;
 import almeida.fernando.fitmeapp.model.Usuario;
 
 @Repository
-public interface LoginClienteRepository extends MongoRepository<Cliente, Integer> {
+public interface ClienteRepository extends MongoRepository<Cliente, Integer> {
 
 	Usuario findByLoginAndSenha(String login, String senha);
 	

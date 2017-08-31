@@ -15,7 +15,7 @@ public class Usuario {
 	private String email;
 
 	private String nomeCompleto;
-
+	
 	private Date clienteDesde;
 
 	public String getId() {
