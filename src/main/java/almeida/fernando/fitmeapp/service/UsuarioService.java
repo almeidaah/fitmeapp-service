@@ -1,5 +1,7 @@
 package almeida.fernando.fitmeapp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -36,6 +38,13 @@ public class UsuarioService {
 			clienteRepository.insert((Cliente)usuario);
 		}
 		
+	}
+
+	public List<? extends Usuario> listAll(boolean instrutores) {
+		if(instrutores){
+			return instrutorRepository.findAll();
+		}
+		return clienteRepository.findAll();
 	}
 
 }
